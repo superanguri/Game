@@ -34,9 +34,21 @@ public class Sprite {
         
         SHEET = bImageTowImage(ImageIO.read(getClass().getResource(path)));
         
-        
+        manageStuff();
     }
     
+    private void manageStuff(){
+        
+        for(int i = 0; i < FRAMES; i++){
+            int xStart = WIDTH*i;
+            int yStart = 0;
+            int xEnd = ((WIDTH*(i+1))-1);
+            int yEnd = HEIGHT-1;
+            AFRAMES.add(getSubImage(SHEET, xStart, yStart, xEnd, yEnd));
+        } 
+                   
+        
+    }
     private WritableImage getSubImage(WritableImage img, int xS, int yS, int xE, int yE){
         
         WritableImage image = new WritableImage(WIDTH, HEIGHT);
@@ -47,7 +59,9 @@ public class Sprite {
         
         return image;
     }
-    
+        
+    //Wird benötigt, um das durch die ImageIO.read Funktion geladene BufferedImage in ein WritableImage zu konvertieren
+    //Es wird lediglich pixel für pixel abgeklappert...
     private WritableImage bImageTowImage(BufferedImage img){
         
         WritableImage image = new WritableImage((int)img.getWidth(), (int)img.getHeight());
@@ -55,6 +69,12 @@ public class Sprite {
         for(int y = 0; y < image.getHeight(); y++)
             for(int x = 0; x < image.getWidth(); x++)
                 image.getPixelWriter().setArgb(x, y, img.getRGB(x, y));
+        
+        return image;
+    }
+    
+    private WritableImage flipFrame(WritableImage img){
+        WritableImage image = new WritableImage(WIDTH, HEIGHT);
         
         return image;
     }
