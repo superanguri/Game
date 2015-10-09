@@ -39,12 +39,14 @@ public class Sprite {
     
     private WritableImage getSubImage(WritableImage img, int xS, int yS, int xE, int yE){
         
+        WritableImage image = new WritableImage((int)img.getWidth(), (int)img.getHeight());
         
+        return null;
     }
     
     private WritableImage bImageTowImage(BufferedImage img){
         
-        WritableImage image = new WritableImage(img.getWidth(), img.getHeight());
+        WritableImage image = new WritableImage((int)img.getWidth(), (int)img.getHeight());
         
         for(int y = 0; y < image.getHeight(); y++)
             for(int x = 0; x < image.getWidth(); x++)
