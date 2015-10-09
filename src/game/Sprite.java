@@ -81,4 +81,14 @@ public class Sprite {
 
         return image;
     }
+
+    public ArrayList<WritableImage> getAFRAMES() {
+        return AFRAMES;
+    }
+
+    public WritableImage getCurrentFrame() {
+        return currentFrame;
+    }
+    
+    
 }
