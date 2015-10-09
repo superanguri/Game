@@ -37,12 +37,12 @@ public class Sprite {
     }
 
     private void manageStuff() {
-
+        
+        int yStart = 0;
+        int yEnd = HEIGHT - 1;
         for (int i = 0; i < FRAMES; i++) {
             int xStart = WIDTH * i;
-            int yStart = 0;
             int xEnd = ((WIDTH * (i + 1)) - 1);
-            int yEnd = HEIGHT - 1;
             AFRAMES.add(getSubImage(SHEET, xStart, yStart, xEnd, yEnd));
         }
 
