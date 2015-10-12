@@ -8,6 +8,9 @@ package game;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.util.ArrayList;
+import javafx.geometry.Rectangle2D;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.image.WritableImage;
 import javax.imageio.ImageIO;
 
@@ -106,4 +109,22 @@ public class Sprite {
         
         return image;
     }
+
+    public int getFRAMES() {
+        return FRAMES;
+    }
+
+    public int getWIDTH() {
+        return WIDTH;
+    }
+
+    public int getHEIGHT() {
+        return HEIGHT;
+    }
+
+    public int getSPACING() {
+        return SPACING;
+    }
+    
+    
 }
